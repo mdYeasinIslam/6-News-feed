@@ -52,10 +52,13 @@ const getNews = (allNews) => {
     getNewsList.innerText = allNews.length + '  news item is available here'
 
     const getNewsDiv = document.getElementById('category-news')
+    const getNoNewsId = document.getElementById('no-news')
     getNewsDiv.innerHTML = ``
-    allNews.forEach(news => {
-        const createDiv = document.createElement('div');
-        createDiv.innerHTML = `
+    if (allNews.length > 0) {
+        getNoNewsId.innerText = null;
+        allNews.forEach(news => {
+            const createDiv = document.createElement('div');
+            createDiv.innerHTML = `
         <div class="card mb-3"  id="detailsBtn">
             <div class="row g-0">
                 <div class="col-md-3 p-4">
@@ -93,25 +96,27 @@ const getNews = (allNews) => {
             </div>
         </div> 
         `
-        getNewsDiv.appendChild(createDiv)
-    });
+            getNewsDiv.appendChild(createDiv)
+        });
+    }
+    else {
+        getNoNewsId.innerText = 'No news available'
+    }
+    /* stop spinner */
     spinnerLoad(false)
 }
 /* 
 news details
 */
 const newsDetailsApi = async (detailsId) => {
-    // console.log(detailsId)
     const url = `https://openapi.programming-hero.com/api/news/${detailsId}`;
     const res = await fetch(url);
     const data = await res.json();
-    // console.log(data.data)
     getDetails(await data.data)
 }
 // newsDetailsApi()
 const getDetails = (newsDetails) => {
 
-    console.log(newsDetails[0].author.name)
     const getModalDiv = document.getElementById('details-modal');
     getModalDiv.innerHTML = ``;
     const createDetailsDiv = document.createElement('div');
@@ -149,7 +154,9 @@ const getDetails = (newsDetails) => {
 
 
 }
-
+/* 
+spinner add
+*/
 const spinnerLoad = (isLoaded) => {
     const getSpinnerID = document.getElementById('loader');
     if (isLoaded == true) {
