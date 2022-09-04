@@ -48,9 +48,8 @@ const getNewsApi = async (id) => {
 }
 getNewsApi('1')
 const getNews = (allNews) => {
-    
-
-
+    const getNewsList = document.getElementById('news-list');
+    getNewsList.innerText = allNews.length + '  news item is available here'
 
     const getNewsDiv = document.getElementById('category-news')
     getNewsDiv.innerHTML = ``
