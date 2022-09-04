@@ -14,7 +14,7 @@ const getCetagoryNames = (names) => {
         const createDiv = document.createElement('div');
        
         createDiv.innerHTML = ` 
-        <li onclick="getNewsApi(${name.category_id})" id="hoverEffect" >
+        <li onclick="getNewsApi(${name.category_id}),spinnerLoad(true)" id="hoverEffect" >
             <span>${name.category_name}</span>
         </li>                        
         `
@@ -95,7 +95,7 @@ const getNews = (allNews) => {
         `
         getNewsDiv.appendChild(createDiv)
     });
-   
+    spinnerLoad(false)
 }
 /* 
 news details
@@ -148,4 +148,17 @@ const getDetails = (newsDetails) => {
     getModalDiv.appendChild(createDetailsDiv)
    
    
+}
+
+const spinnerLoad=(isLoaded)=>{
+    const getSpinnerID=document.getElementById('loader');
+    if(isLoaded==true){
+        getSpinnerID.classList.remove('d-none')
+    }
+    else{
+         
+            getSpinnerID.classList.add('d-none')
+       
+    }
+    
 }
