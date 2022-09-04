@@ -9,27 +9,22 @@ const cetagoryApi = async () => {
 }
 cetagoryApi();
 const getCetagoryNames = (names) => {
-    //  console.log(names)
     const getCetagoryDiv = document.getElementById('cetagori-list')
     names.forEach(name => {
-        // console.log(name.category_id)
         const createDiv = document.createElement('div');
        
         createDiv.innerHTML = ` 
-        <li onclick="getNewsApi(${name.category_id})," id="hoverEffect" >
+        <li onclick="getNewsApi(${name.category_id})" id="hoverEffect" >
             <span>${name.category_name}</span>
         </li>                        
         `
         getCetagoryDiv.appendChild(createDiv)
     });
-    
 }
 /* 
 Add news by category_Id
 */
 const getNewsApi = async (id) => {
-    // console.log(id)
-   
     const url = (`https://openapi.programming-hero.com/api/news/category/0${id}`);
     const res = await fetch(url);
     const data = await res.json();
@@ -51,9 +46,11 @@ const getNewsApi = async (id) => {
     
     getNews(formattedData)
 }
-getNewsApi()
+getNewsApi('1')
 const getNews = (allNews) => {
-    
+
+   
+
     const getNewsDiv = document.getElementById('category-news')
     getNewsDiv.innerHTML = ``
     allNews.forEach(news => {
@@ -98,7 +95,7 @@ const getNews = (allNews) => {
         `
         getNewsDiv.appendChild(createDiv)
     });
-    
+   
 }
 /* 
 news details

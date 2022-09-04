@@ -12,4 +12,8 @@
     background-color:#F6F6F7 ;
   color:858585 ;
 }
-     
+#loader{
+    -webkit-animation: spin 5s linear;
+    animation: spin 5s linear;
+  
+}
