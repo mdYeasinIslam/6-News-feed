@@ -17,7 +17,7 @@ const getCetagoryNames = (names) => {
         const createDiv = document.createElement('div');
 
         createDiv.innerHTML = ` 
-        <li onclick="getNewsApi(${name.category_id}),spinnerLoad(true)" type="button" id="hoverEffect" class="btn btn-outline-primary fs-5" data-bs-toggle="button" aria-pressed="" >
+        <li onclick="getNewsApi(${name.category_id}),spinnerLoad(true)" type="button" id="hoverEffect" class="btn btn-outline-primary fs-5" >
             <span>${name.category_name}</span>
         </li>                        
         `
