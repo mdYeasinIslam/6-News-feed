@@ -1,11 +1,14 @@
 /* 
 set category Name
 */
-const cetagoryApi = async () => {
+const cetagoryApi = () => {
+    
     const url = (`https://openapi.programming-hero.com/api/news/categories`);
-    const res = await fetch(url);
-    const data = await res.json();
-    getCetagoryNames(data.data.news_category)
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>getCetagoryNames(data.data.news_category))
+    .catch(error=>console.log(error))
+    
 }
 cetagoryApi();
 const getCetagoryNames = (names) => {
@@ -14,7 +17,7 @@ const getCetagoryNames = (names) => {
         const createDiv = document.createElement('div');
 
         createDiv.innerHTML = ` 
-        <li onclick="getNewsApi(${name.category_id}),spinnerLoad(true)" id="hoverEffect" >
+        <li onclick="getNewsApi(${name.category_id}),spinnerLoad(true)" type="button" id="hoverEffect" class="btn btn-outline-primary fs-5" data-bs-toggle="button" aria-pressed="" >
             <span>${name.category_name}</span>
         </li>                        
         `
@@ -59,10 +62,10 @@ const getNews = (allNews) => {
         allNews.forEach(news => {
             const createDiv = document.createElement('div');
             createDiv.innerHTML = `
-        <div class="card mb-3"  id="detailsBtn">
+        <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-3 p-4">
-                <img src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+                <img src="${news.thumbnail_url}" class="img-fluid w-sm-100 w-100 rounded-start" alt="...">
                 </div>
                 <div class="col-md-9 pt-4">
                     <div class="card-body">
@@ -78,8 +81,8 @@ const getNews = (allNews) => {
                                 <p  class="ps-3">${news.author.published_date}</p>
                                 </div>
                         </div>
-                        <div>
-                            <h5> <i class="fa-solid fa-eye"></i> ${news.total_view}K</h5>
+                        <div class="d-none d-md-block ">
+                            <h5> <i class="fa-solid fa-eye "></i> ${news.total_view}K</h5>
                         </div>
                         <div class=" d-none d-lg-block">
                             <i class="fa-solid fa-star-half-stroke"></i>
@@ -125,7 +128,7 @@ const getDetails = (newsDetails) => {
     <div class="modal-content">
         <div class="modal-header">
             <div class="d-flex">  
-                <div><img src="${newsDetails[0].author.img}" width="100px"></div>
+                <div><img class="" src="${newsDetails[0].author.img}" width="100px"></div>
                 <div>
                     <h4 class="ps-2">${newsDetails[0].author.name}</h4>
                     <div class="d-flex justify-content-between">
@@ -147,7 +150,7 @@ const getDetails = (newsDetails) => {
     </div>
       `
         : `<div>
-            <h3 class="display-6 fs-1 fw-bold text-center text-warning">No data found</h3>
+            <h3 class="display-6 fs-1 fw-bold text-center text-warning">Some data are not available</h3>
         </div>
       `
     getModalDiv.appendChild(createDetailsDiv)

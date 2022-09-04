@@ -18,13 +18,13 @@
 <body>
     <header>
         <nav class="navbar bg-light container font-style p-4">
-            <div class="container-fluid">
+            <div class="container-fluid ">
                 <a class="navbar-brand" href="#">
                     <img src="images/21601.png" alt="" width="40" height="30" class="d-inline-block align-text-top">
                     Feed
                 </a>
                 <form class="d-flex gap-4" role="search">
-                    <div class="d-flex gap-4">
+                    <div class="d-flex  gap-4">
                         <h4>Home</h4>
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle"data-bs-toggle="dropdown"
@@ -41,7 +41,7 @@
 
                     </div>
                     <div>
-                        <a href=""><img src="images/download.jpg" alt="" width="40px"></a>
+                        <a href=""><img src="images/download.jpg" alt="" class="d-none d-sm-block" width="40px"></a>
                     </div>
                 </form>
             </div>
@@ -143,11 +143,29 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <h5 class="modal-title" id="exampleModalLabel">What is the difference between map,forEach,find,filter?</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>44444444444</p>
+                        <p>
+                            <ol>
+                                <li>
+                                    forEach: 1).forEach() is great you need to execute a function for each individual element in an array. Good practice is that you should use .forEach() when you can’t use other array methods to accomplish your goal. I know this may sound vague, but .forEach() is a generic tool… only use it when you can’t use a more specialized tool. <br>       
+                                </li>
+                                <li>
+                                    Map: 1).map() when you want to transform elements in an array. <br>
+                                        2)Its return an array.                                
+                                </li>
+                                <li>
+                                    Filter: 1).filter() when you want to select a subset of multiple elements from an array. <br>
+                                       2)Its return an array according by given condition.                                    
+                                </li>
+                                <li>
+                                    Find: 1).find() When you want to select a single element from an array. <br>
+                                       2)Its return a single element of array                                  
+                                </li>
+                            </ol>
+                        </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -162,7 +180,7 @@
         <!-- category name -->
         <section>
             <div class="py-4">
-                <ul id="cetagori-list" class="nav justify-content-center fs-5 gap-5">
+                <ul id="cetagori-list" class="nav  justify-content-center  fs-5 gap-3">
 
                 </ul>
             </div>
@@ -177,7 +195,7 @@
         </section>
         <!-- how many news avilable -->
         <section class="container">
-            <div id="news-list" class="w-75 border border-primary fs-5 fw-bold bg-secondary my-5">
+            <div id="news-list" class="w-75 border border-primary fs-5 fw-bold bg-secondary my-5 ps-5 py-3">
                 <h1></h1>
             </div>
         </section>
