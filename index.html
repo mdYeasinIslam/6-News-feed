@@ -26,7 +26,19 @@
                 <form class="d-flex gap-4" role="search">
                     <div class="d-flex gap-4">
                         <h4>Home</h4>
-                        <h4>Blogs</h4>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle"data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Blogs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal1" >Question-1</a></li>
+                                <li><a class="dropdown-item" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal2" >Question-2</a></li>
+                                <li><a class="dropdown-item" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal3" >Question-3</a></li>
+                                <li><a class="dropdown-item" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal4" >Question-4</a></li>
+                            </ul>
+                        </div>
+
                     </div>
                     <div>
                         <a href=""><img src="images/download.jpg" alt="" width="40px"></a>
@@ -35,6 +47,115 @@
             </div>
         </nav>
         <hr>
+        <!-- Modal 1 -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Q-1:let,var,const-What is the difference between them?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>The difference between them :
+                           <ol> <b>1.Scope:</b>
+                               <ul>
+                                <li>Var:In the var tab, when you will run the code, you will see an error as a is not defined because var variables are only accessible in the function scope.</li>
+                                <li>let:In the let tab, when you run the code, you will see an error as i is not defined because let variables are only accessible within the block they are declared.</li>
+                                <li>const:In the const tab, when you run the code, you will see that x was defined under the block was accessible, but when you try to access x outside that block, you will get an error.</li>
+                               </ul>
+                              <b> 2.Hosting:</b>
+                               <ul>
+                                <li>var:In the var tab, when you run the code, you will see there is no error and that we can declare var variables after defining them.</li>
+                              <li>let:In the let tab, when you run the code, you will get an error as let variables do not support hoisting.</li>
+                              <li>const:In the const tab, when you run the code, you will get an error as const variables do not support hoisting.</li>
+                            </ul>
+                            <b>3.Reassign the value:</b>
+                            <ul>
+                                <li>let & var:In the var and let tab, when you run the code, you will see that there is no error and we can define new values to the var and let variables.</li>
+                                <li>const:In the const tab, when you run the code, you will get an error as a const variables value cannot be reassigned.</li>
+                            </ul>
+                          <b>  4:Redeclaration of the variable:</b>
+                            <ul>
+                                <li>var:In the var tab, when you run the code, you will see that there is no error as we allowed to declare the same variable again.</li>
+                                <li>let & const:In the let and the const tabs, when you run the code, you will get an error as the let and const variables do not allow you to redeclare them again.</li>
+                            </ul>
+                       </ol> </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 2-->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">What is the difference between arrrow function and regular function?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>There are 4 kinds of difference between them:
+                            <ol>
+                                <li><b>Syntax:</b>  A programmer can get the same result as regular functions by writing a few lines of code using arrow functions.
+
+                                    Curly brackets are not required if only one expression is present.
+                                    
+                                </li>
+                                <li><b>Arguments binding:</b> arguments object inside the regular functions contains the list of arguments.The arrow function, on the opposite, does not define arguments i.e. they do not have arguments binding.But you can easily access the arrow function arguments using a rest parameter ...args.</li>
+                                <li><b>Use of this keyword:</b> Inside of a regular JavaScript function, this value is dynamic. The dynamic context means that the value of this depends on how the function is invoked.The behavior of this inside of an arrow, function differs considerably from the regular function’s this behavior as an arrow function does not have its own “this” keyword.
+
+                                    The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function which means No matter how or where being executed, this value inside of an arrow function always equals this value from the outer function.</li>
+                                <li><b>Using a new keyword:</b> Regular functions are constructible and callable. They can be called using the new keyword.But, the arrow functions are only callable and not constructible, i.e., arrow functions can never be used as constructor functions.
+
+                                </li>
+                            </ol>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 3-->
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Why we use template string in javascript?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 4-->
+        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>44444444444</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </header>
     <main class="category-item">
@@ -50,7 +171,7 @@
         <section id="loader" class="d-none">
             <div style="height: 500vh;" class="d-flex justify-content-center mt-5">
                 <div class="spinner-border " role="status">
-                    <span class="visually-hidden disabled">Loading...</span>
+                    <span class="visually-hidden disabled">Loadinglorem20</span>
                 </div>
             </div>
         </section>
@@ -60,12 +181,12 @@
                 <h1></h1>
             </div>
         </section>
-         <!-- if no news available -->
-         <section>
+        <!-- if no news available -->
+        <section>
             <div id="no-news" class="text-center fs-3 fw-bold text-danger">
                 <h2></h2>
             </div>
-         </section>
+        </section>
         <!--news by category name -->
         <section class="container">
             <div id="category-news">
