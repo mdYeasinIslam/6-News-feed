@@ -12,7 +12,7 @@ const getCetagoryNames = (names) => {
     const getCetagoryDiv = document.getElementById('cetagori-list')
     names.forEach(name => {
         const createDiv = document.createElement('div');
-       
+
         createDiv.innerHTML = ` 
         <li onclick="getNewsApi(${name.category_id}),spinnerLoad(true)" id="hoverEffect" >
             <span>${name.category_name}</span>
@@ -43,13 +43,14 @@ const getNewsApi = async (id) => {
             total_view: article.total_view
         }
     })
-    
+
     getNews(formattedData)
 }
 getNewsApi('1')
 const getNews = (allNews) => {
+    
 
-   
+
 
     const getNewsDiv = document.getElementById('category-news')
     getNewsDiv.innerHTML = ``
@@ -110,13 +111,13 @@ const newsDetailsApi = async (detailsId) => {
 }
 // newsDetailsApi()
 const getDetails = (newsDetails) => {
- 
+
     console.log(newsDetails[0].author.name)
     const getModalDiv = document.getElementById('details-modal');
-    getModalDiv.innerHTML=``;
+    getModalDiv.innerHTML = ``;
     const createDetailsDiv = document.createElement('div');
-    
-    createDetailsDiv.innerHTML = newsDetails[0].author.name && newsDetails[0].total_view>=0? `
+
+    createDetailsDiv.innerHTML = newsDetails[0].author.name && newsDetails[0].total_view >= 0 ? `
     <div class="modal-content">
         <div class="modal-header">
             <div class="d-flex">  
@@ -141,24 +142,24 @@ const getDetails = (newsDetails) => {
         </div>
     </div>
       `
-      : `<div>
+        : `<div>
             <h3 class="display-6 fs-1 fw-bold text-center text-warning">No data found</h3>
         </div>
       `
     getModalDiv.appendChild(createDetailsDiv)
-   
-   
+
+
 }
 
-const spinnerLoad=(isLoaded)=>{
-    const getSpinnerID=document.getElementById('loader');
-    if(isLoaded==true){
+const spinnerLoad = (isLoaded) => {
+    const getSpinnerID = document.getElementById('loader');
+    if (isLoaded == true) {
         getSpinnerID.classList.remove('d-none')
     }
-    else{
-         
-            getSpinnerID.classList.add('d-none')
-       
+    else {
+
+        getSpinnerID.classList.add('d-none')
+
     }
-    
+
 }
